@@ -11,13 +11,13 @@ description: 'Relative positional encoding for Transformers with linear complexi
 ## Examples
 
 #### Prompt
-{% include midi-player.html src="/midi/cifkao/trio_performer_softmax_sinespe_l512_v01/maj085.JAZZROK2_a.prompt.mid" %}
+{% include midi-player.html src="/midi/grv2grv/trio_performer_softmax_sinespe_l512_v01/maj085.JAZZROK2_a.prompt.mid" %}
 
 #### Continuation
-{% include midi-player.html src="/midi/cifkao/trio_performer_softmax_sinespe_l512_v01/maj085.JAZZROK2_a.cont.mid" %}
+{% include midi-player.html src="/midi/grv2grv/trio_performer_softmax_sinespe_l512_v01/maj085.JAZZROK2_a.cont.mid" %}
 
 #### Prompt
-{% include midi-player.html src="/midi/cifkao/trio_performer_softmax_sinespe_l512_v01/maj064.Duke1_b.prompt.mid" %}
+{% include midi-player.html src="/midi/grv2grv/trio_performer_softmax_sinespe_l512_v01/maj064.Duke1_b.prompt.mid" %}
 
 #### Continuation
-{% include midi-player.html src="/midi/cifkao/trio_performer_softmax_sinespe_l512_v01/maj064.Duke1_b.cont.mid" %}
+{% include midi-player.html src="/midi/grv2grv/trio_performer_softmax_sinespe_l512_v01/maj064.Duke1_b.cont.mid" %}
