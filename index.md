@@ -3,6 +3,8 @@ title: Stochastic Positional Encoding
 description: 'Relative positional encoding for Transformers with linear complexity'
 ---
 
+{::options toc_levels="1..3" /}
+
 ## Contents
 {: .no_toc}
 * TOC
