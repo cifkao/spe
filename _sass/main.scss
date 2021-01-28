@@ -1,0 +1,43 @@
+.main-content {
+  /* Prevent overflow on mobile, see https://stackoverflow.com/questions/14270084/overflow-xhidden-doesnt-prevent-content-from-overflowing-in-mobile-browsers */
+  position: relative;
+  overflow-x: hidden;
+}
+
+table.audio-table {
+  td {
+    vertical-align: top;
+  }
+
+  audio {
+    height: 2.5rem;
+    max-width: 10rem;
+
+    @include large {
+      display: block;
+      width: 100%;
+      max-width: 100%;
+    }
+  }
+
+  .audio-label {
+    display: block;
+    text-align: center;
+    font-size: 85%;
+  }
+
+  @include large {
+    table-layout: fixed;
+
+    .metric-col {
+      width: 7em;
+    }
+  }
+
+  @media screen and (max-width: #{$large-breakpoint}) {
+    display: block;
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+
+}
