@@ -12,6 +12,10 @@ defaults:
       path: ""
     values:
       layout: default
+  - scope:
+      path: "midi"
+    values:
+      midi: true
 
 baseurl: ""
 
