@@ -12,7 +12,7 @@ description: 'Relative positional encoding for Transformers with linear complexi
 
 ## Examples
 
-[MIDI file browser](midi_browser.html)
+[MIDI file browser]({{ "/midi_browser/" | relative_url }})
 
 #### Prompt
 {% include midi-player.html src="/midi/grv2grv/ape/maj829.RB_WILSN_a.prompt.mid" %}
