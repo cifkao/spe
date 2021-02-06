@@ -10,7 +10,7 @@ Below we display attention weights for 3 different heads. Hover over the image t
 {% assign img_size = 192 %}
 {% assign images = "0-0 0-1 0-2 1-0 1-1 1-2" | split: " " %}
 
-<h2>Linear Transformer-ReLU, APE</h2>
+<h2>Linear Transformer-ReLU, learnable absolute positional encoding (APE)</h2>
 
 {% for image in images %}
 <div style="width: {{ img_size }}px; height: {{ img_size }}px; overflow: hidden; display: inline-block; margin: 5px; cursor: crosshair;" class="img-attn-visualizer">
