@@ -4,40 +4,90 @@
   overflow-x: hidden;
 }
 
-table.audio-table {
-  td {
-    vertical-align: top;
+
+$visualizer-bg: #fefefe;
+$player-bottom-bg: #e0e0e0;
+$player-border-color: #e0e0e0;
+$instrument-colors: #007bff, #20c997, #dc3545, #6610f2, #ffc107, #e83e8c, #17a2b8, #fd7e14, #28a745;
+
+midi-player, midi-visualizer {
+  display: block;
+  width: inherit;
+  margin: 0;
+}
+
+midi-visualizer {
+  border-radius: 10px 10px 0 0;
+  border: 1px solid $player-border-color;
+  border-bottom: none;
+  background: $visualizer-bg;
+
+  .piano-roll-visualizer {
+    width: inherit;
+    overflow: auto;
+  
+    svg {
+      margin: 2px;
+  
+      rect.note {
+        opacity: calc(min(1, (var(--midi-velocity) + 30) / 128) * 0.75);
+  
+        &.active {
+          opacity: calc(min(1, (var(--midi-velocity) + 30) / 128) * 0.9);
+          stroke: black;
+          stroke-width: 0.75;
+          stroke-opacity: 0.75;
+        }
+      }
+  
+      @for $i from 0 to 200 {
+        $color: nth($instrument-colors, ($i % length($instrument-colors)) + 1);
+        rect.note[data-instrument="#{$i}"] {
+          fill: darken(saturate($color, 40%), 10%);
+        }
+      }
+    }
   }
+}
 
-  audio {
-    height: 2.5rem;
-    max-width: 10rem;
+midi-player {
+  &::part(control-panel) {
+    border-radius: 0 0 10px 10px;
+    border: 1px solid $player-border-color;
+    border-top: none;
+    background: linear-gradient($visualizer-bg, $player-bottom-bg);
+  }
+}
 
-    @include large {
+.tabbed-midi-player {
+  .tabs{
+    display: flex;
+    border-bottom: 1px solid $player-border-color;
+
+    a {
       display: block;
-      width: 100%;
-      max-width: 100%;
+      padding: 1rem 1.5rem;
+      margin-bottom: -1px;
+      border: 1px solid transparent;
+      border-radius: 5px 5px 0 0;
+    }
+
+    a:hover, a:active {
+      text-decoration: none;
+      border-color: #f0f0f0;
+      border-bottom-color: transparent;
+    }
+
+    a.selected {
+      color: $body-text-color;
+      background: $visualizer-bg;
+      border-color: $player-border-color;
+      border-bottom-color: $visualizer-bg;
     }
   }
 
-  .audio-label {
-    display: block;
-    text-align: center;
-    font-size: 85%;
+  midi-visualizer {
+    border-top: none;
+    border-radius: 0;
   }
-
-  @include large {
-    table-layout: fixed;
-
-    .metric-col {
-      width: 7em;
-    }
-  }
-
-  @media screen and (max-width: #{$large-breakpoint}) {
-    display: block;
-    max-height: 90vh;
-    overflow-y: auto;
-  }
-
 }
