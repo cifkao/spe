@@ -65,6 +65,7 @@ midi-player {
 
   .tabs{
     display: flex;
+    flex-wrap: wrap;
     border-bottom: 1px solid $player-border-color;
 
     a {
