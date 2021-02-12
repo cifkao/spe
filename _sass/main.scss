@@ -60,6 +60,9 @@ midi-player {
 }
 
 .tabbed-midi-player {
+  margin-top: 1rem;
+  margin-bottom: 1.2rem;
+
   .tabs{
     display: flex;
     border-bottom: 1px solid $player-border-color;

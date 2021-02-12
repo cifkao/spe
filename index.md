@@ -18,10 +18,32 @@ description: 'Relative Positional Encoding for Transformers with Linear Complexi
 
 <div class="tabbed-midi-player">
 <div class="tabs">
-  <a href="#" data-midi-url="/midi/grv2grv/ape/maj829.RB_WILSN_a.prompt.mid" class="selected">Prompt</a>
-  <a href="#" data-midi-url="/midi/grv2grv/ape/maj829.RB_WILSN_a.prompt_cont_0.mid">APE</a>
-  <a href="#" data-midi-url="/midi/grv2grv/sinespe/maj829.RB_WILSN_a.prompt_cont_0.mid">SineSPE</a>
-  <a href="#" data-midi-url="/midi/grv2grv/convspe/maj829.RB_WILSN_a.prompt_cont_0.mid">ConvSPE</a>
+  <a href="#" data-midi-url="/midi/grv2grv/ape/maj357.C_SAMMY_b.prompt.mid" class="selected">Prompt</a>
+  <a href="#" data-midi-url="/midi/grv2grv/ape/maj357.C_SAMMY_b.prompt_cont_0.mid">APE</a>
+  <a href="#" data-midi-url="/midi/grv2grv/sinespe/maj357.C_SAMMY_b.prompt_cont_0.mid">SineSPE</a>
+  <a href="#" data-midi-url="/midi/grv2grv/convspe/maj357.C_SAMMY_b.prompt_cont_0.mid">ConvSPE</a>
+</div>
+<midi-visualizer></midi-visualizer>
+<midi-player sound-font></midi-player>
+</div>
+
+<div class="tabbed-midi-player">
+<div class="tabs">
+  <a href="#" data-midi-url="/midi/grv2grv/ape/min114.EUROBEA3_a.prompt.mid" class="selected">Prompt</a>
+  <a href="#" data-midi-url="/midi/grv2grv/ape/min114.EUROBEA3_a.prompt_cont_1.mid">APE</a>
+  <a href="#" data-midi-url="/midi/grv2grv/sinespe/min114.EUROBEA3_a.prompt_cont_2.mid">SineSPE</a>
+  <a href="#" data-midi-url="/midi/grv2grv/convspe/min114.EUROBEA3_a.prompt_cont_2.mid">ConvSPE</a>
+</div>
+<midi-visualizer></midi-visualizer>
+<midi-player sound-font></midi-player>
+</div>
+
+<div class="tabbed-midi-player">
+<div class="tabs">
+  <a href="#" data-midi-url="/midi/grv2grv/ape/min183.BuddyG_a.prompt.mid" class="selected">Prompt</a>
+  <a href="#" data-midi-url="/midi/grv2grv/ape/min183.BuddyG_a.prompt_cont_0.mid">APE</a>
+  <a href="#" data-midi-url="/midi/grv2grv/sinespe/min183.BuddyG_a.prompt_cont_0.mid">SineSPE</a>
+  <a href="#" data-midi-url="/midi/grv2grv/convspe/min183.BuddyG_a.prompt_cont_2.mid">ConvSPE</a>
 </div>
 <midi-visualizer></midi-visualizer>
 <midi-player sound-font></midi-player>
