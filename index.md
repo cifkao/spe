@@ -15,6 +15,10 @@ description: 'Relative Positional Encoding for Transformers with Linear Complexi
 [MIDI file browser]({{ "/midi_browser/" | relative_url }})
 
 ### Groove continuation
+The following examples are from models trained on the Groove2Groove dataset, consisting of accompaniments.
+In each example, we prompt the model with 2 bars of a new accompaniment (unseen during training) and then
+let it generate a continuation. The first tab displays the initial prompt, the following tabs contain examples
+from the three respective models evaluated in the paper.
 
 <div class="tabbed-midi-player">
 <div class="tabs">
