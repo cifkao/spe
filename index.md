@@ -57,6 +57,7 @@ continuations generated from the three respective models evaluated in the paper.
 document.querySelectorAll('midi-visualizer').forEach(function (visualizer) {
   visualizer.config.noteHeight = 4;
   visualizer.config.pixelsPerTimeStep = 30;
+  visualizer.classList.add('loading');
 });
 
 document.querySelectorAll('.tabbed-midi-player').forEach(function (container) {
@@ -67,6 +68,9 @@ document.querySelectorAll('.tabbed-midi-player').forEach(function (container) {
   player.src = defaultUrl;
   visualizer.src = defaultUrl;
 
+  player.addEventListener('load', function() {
+    visualizer.classList.remove('loading');
+  });
   player.addEventListener('start', function () {
     visualizer.querySelector('.piano-roll-visualizer').scrollLeft = 0;
   });
@@ -78,6 +82,7 @@ document.querySelectorAll('.tabbed-midi-player').forEach(function (container) {
       event.preventDefault();
       player.src = url;
       visualizer.src = url;
+      visualizer.classList.add('loading');
       container.querySelector('a[data-midi-url].selected').classList.remove('selected');
       link.classList.add('selected');
     });

@@ -48,6 +48,11 @@ midi-visualizer {
       }
     }
   }
+
+  &.loading .piano-roll-visualizer {
+    filter: grayscale(60%);
+    opacity: 0.5;
+  }
 }
 
 midi-player {
