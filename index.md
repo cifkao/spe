@@ -98,7 +98,10 @@ The following examples are from models trained on the Groove2Groove accompanimen
 In each example, we prompt the model with 2 bars of a new accompaniment (unseen during training) and then
 let it generate a continuation. While the models were trained on segments of length 512 (corresponding to
 2–10 bars), we let them generate 1024 tokens to test extrapolation.
-Again, there is a striking difference between APE and SPE-based models in terms of extrapolation performance.
+Again, SPE-based models are clearly superior to APE-based ones in terms of the quality of the generated
+samples, although the former also slightly degrade over time.
+
+Both SPE-based models use the *gated* variant.
 
 <div class="tabbed-midi-player">
 <div class="tabs">
