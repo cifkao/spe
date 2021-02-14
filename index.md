@@ -12,20 +12,100 @@ description: 'Relative Positional Encoding for Transformers with Linear Complexi
 
 ## Examples
 
-[MIDI file browser]({{ "/midi_browser/" | relative_url }})
+<section id="pop-piano" markdown="1">
+
+### Pop piano generation
+
+The following examples are generated from models trained for pop piano generation with sequence length 2048.
+We display outputs up to length 2560 to demonstrate extrapolation.
+*APE* refers to the Performer model with absolute positional encoding, the rest use our proposed *sinusoidal*
+and *convolutional SPE* (*gated* and *ungated* variants).
+We can clearly observe that the outputs from *APE* quickly become incoherent once the training length
+is exceeded; on the other hand, SPE-based models (especially ungated *convolutional SPE*) seem to
+extrapolate well.
+
+Use the following checkbox to control whether the extrapolation (beyond length 2048) is displayed or not.
+
+<div>
+<input type="checkbox" id="popExtrapolate" name="popExtrapolate" checked>
+<label for="popExtrapolate" style="font-weight: bold;">Show extrapolation</label>
+</div>
+
+#### APE
+
+<div class="tabbed-midi-player">
+<div class="tabs">
+  {% for num in (1..10) %}
+    <a href="#" data-midi-url="/midi/pop_piano/ape/samp{{ num | prepend: '00' | slice: -2, 2 }}_extrapolation.mid">{{ num }}</a>
+  {% endfor %}
+</div>
+<midi-visualizer></midi-visualizer>
+<midi-player sound-font></midi-player>
+</div>
+
+#### Sinusoidal SPE, gated
+
+<div class="tabbed-midi-player">
+<div class="tabs">
+  {% for num in (1..10) %}
+    <a href="#" data-midi-url="/midi/pop_piano/sinespe/samp{{ num | prepend: '00' | slice: -2, 2 }}_extrapolation.mid">{{ num }}</a>
+  {% endfor %}
+</div>
+<midi-visualizer></midi-visualizer>
+<midi-player sound-font></midi-player>
+</div>
+
+#### Sinusoidal SPE, ungated
+
+<div class="tabbed-midi-player">
+<div class="tabs">
+  {% for num in (1..10) %}
+    <a href="#" data-midi-url="/midi/pop_piano/sinespe_ungated/samp{{ num | prepend: '00' | slice: -2, 2 }}_extrapolation.mid">{{ num }}</a>
+  {% endfor %}
+</div>
+<midi-visualizer></midi-visualizer>
+<midi-player sound-font></midi-player>
+</div>
+
+#### Convolutional SPE, gated
+
+<div class="tabbed-midi-player">
+<div class="tabs">
+  {% for num in (1..10) %}
+    <a href="#" data-midi-url="/midi/pop_piano/convspe/samp{{ num | prepend: '00' | slice: -2, 2 }}_extrapolation.mid">{{ num }}</a>
+  {% endfor %}
+</div>
+<midi-visualizer></midi-visualizer>
+<midi-player sound-font></midi-player>
+</div>
+
+#### Convolutional SPE, ungated
+
+<div class="tabbed-midi-player">
+<div class="tabs">
+  {% for num in (1..10) %}
+    <a href="#" data-midi-url="/midi/pop_piano/convspe_ungated/samp{{ num | prepend: '00' | slice: -2, 2 }}_extrapolation.mid">{{ num }}</a>
+  {% endfor %}
+</div>
+<midi-visualizer></midi-visualizer>
+<midi-player sound-font></midi-player>
+</div>
+
+</section>
 
 ### Groove continuation
-The following examples are from models trained on the Groove2Groove dataset, consisting of accompaniments.
+The following examples are from models trained on the Groove2Groove accompaniment dataset.
 In each example, we prompt the model with 2 bars of a new accompaniment (unseen during training) and then
-let it generate a continuation. The first tab displays the initial prompt, the following tabs contain
-continuations generated from the three respective models evaluated in the paper.
+let it generate a continuation. While the models were trained on segments of length 512 (corresponding to
+2–10 bars), we let them generate 1024 tokens to test extrapolation.
+Again, there is a striking difference between APE and SPE-based models in terms of extrapolation performance.
 
 <div class="tabbed-midi-player">
 <div class="tabs">
   <a href="#" data-midi-url="/midi/grv2grv/ape/maj357.C_SAMMY_b.prompt.mid" class="selected">Prompt</a>
   <a href="#" data-midi-url="/midi/grv2grv/ape/maj357.C_SAMMY_b.prompt_cont_0.mid">APE</a>
-  <a href="#" data-midi-url="/midi/grv2grv/sinespe/maj357.C_SAMMY_b.prompt_cont_0.mid">SineSPE</a>
-  <a href="#" data-midi-url="/midi/grv2grv/convspe/maj357.C_SAMMY_b.prompt_cont_0.mid">ConvSPE</a>
+  <a href="#" data-midi-url="/midi/grv2grv/sinespe/maj357.C_SAMMY_b.prompt_cont_0.mid">Sinusoidal SPE</a>
+  <a href="#" data-midi-url="/midi/grv2grv/convspe/maj357.C_SAMMY_b.prompt_cont_0.mid">Convolutional SPE</a>
 </div>
 <midi-visualizer></midi-visualizer>
 <midi-player sound-font></midi-player>
@@ -35,8 +115,8 @@ continuations generated from the three respective models evaluated in the paper.
 <div class="tabs">
   <a href="#" data-midi-url="/midi/grv2grv/ape/min114.EUROBEA3_a.prompt.mid" class="selected">Prompt</a>
   <a href="#" data-midi-url="/midi/grv2grv/ape/min114.EUROBEA3_a.prompt_cont_1.mid">APE</a>
-  <a href="#" data-midi-url="/midi/grv2grv/sinespe/min114.EUROBEA3_a.prompt_cont_2.mid">SineSPE</a>
-  <a href="#" data-midi-url="/midi/grv2grv/convspe/min114.EUROBEA3_a.prompt_cont_2.mid">ConvSPE</a>
+  <a href="#" data-midi-url="/midi/grv2grv/sinespe/min114.EUROBEA3_a.prompt_cont_2.mid">Sinusoidal SPE</a>
+  <a href="#" data-midi-url="/midi/grv2grv/convspe/min114.EUROBEA3_a.prompt_cont_2.mid">Convolutional SPE</a>
 </div>
 <midi-visualizer></midi-visualizer>
 <midi-player sound-font></midi-player>
@@ -46,8 +126,8 @@ continuations generated from the three respective models evaluated in the paper.
 <div class="tabs">
   <a href="#" data-midi-url="/midi/grv2grv/ape/min183.BuddyG_a.prompt.mid" class="selected">Prompt</a>
   <a href="#" data-midi-url="/midi/grv2grv/ape/min183.BuddyG_a.prompt_cont_0.mid">APE</a>
-  <a href="#" data-midi-url="/midi/grv2grv/sinespe/min183.BuddyG_a.prompt_cont_0.mid">SineSPE</a>
-  <a href="#" data-midi-url="/midi/grv2grv/convspe/min183.BuddyG_a.prompt_cont_2.mid">ConvSPE</a>
+  <a href="#" data-midi-url="/midi/grv2grv/sinespe/min183.BuddyG_a.prompt_cont_0.mid">Sinusoidal SPE</a>
+  <a href="#" data-midi-url="/midi/grv2grv/convspe/min183.BuddyG_a.prompt_cont_2.mid">Convolutional SPE</a>
 </div>
 <midi-visualizer></midi-visualizer>
 <midi-player sound-font></midi-player>
@@ -61,6 +141,11 @@ document.querySelectorAll('midi-visualizer').forEach(function (visualizer) {
 });
 
 document.querySelectorAll('.tabbed-midi-player').forEach(function (container) {
+  // Make first tab selected
+  if (!container.querySelector('a[data-midi-url].selected')) {
+    container.querySelector('a[data-midi-url]').classList.add('selected');
+  }
+
   const visualizer = container.querySelector('midi-visualizer');
   const player = container.querySelector('midi-player');
   const defaultUrl = container.querySelector('a[data-midi-url].selected').dataset.midiUrl;
@@ -77,15 +162,31 @@ document.querySelectorAll('.tabbed-midi-player').forEach(function (container) {
 
   // Tabs
   container.querySelectorAll('a[data-midi-url]').forEach(function (link) {
-    const url = link.dataset.midiUrl;
     link.addEventListener('click', function (event) {
       event.preventDefault();
-      player.src = url;
-      visualizer.src = url;
+      player.src = link.dataset.midiUrl;
+      visualizer.src = link.dataset.midiUrl;
       visualizer.classList.add('loading');
+      visualizer.querySelector('.piano-roll-visualizer').scrollLeft = 0;
       container.querySelector('a[data-midi-url].selected').classList.remove('selected');
       link.classList.add('selected');
     });
+  });
+});
+
+document.querySelector('#popExtrapolate').addEventListener('change', function () {
+  document.querySelectorAll('#pop-piano a[data-midi-url]').forEach(function (tab) {
+    if (document.querySelector('#popExtrapolate').checked) {
+      if (tab.dataset.midiUrl.indexOf('_extrapolation') < 0) {
+        tab.dataset.midiUrl = tab.dataset.midiUrl.replace('.mid', '_extrapolation.mid');
+      }
+    } else {
+      tab.dataset.midiUrl = tab.dataset.midiUrl.replace('_extrapolation', '');
+    }
+
+    if (tab.classList.contains('selected')) {
+      tab.click();
+    }
   });
 });
 </script>
