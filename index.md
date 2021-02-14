@@ -181,6 +181,7 @@ document.querySelectorAll('.tabbed-midi-player').forEach(function (container) {
 
   player.addEventListener('load', function() {
     visualizer.classList.remove('loading');
+    visualizer.querySelector('.piano-roll-visualizer').scrollLeft = 0;
   });
   player.addEventListener('start', function () {
     visualizer.querySelector('.piano-roll-visualizer').scrollLeft = 0;
@@ -193,7 +194,6 @@ document.querySelectorAll('.tabbed-midi-player').forEach(function (container) {
       player.src = link.dataset.midiUrl;
       visualizer.src = link.dataset.midiUrl;
       visualizer.classList.add('loading');
-      visualizer.querySelector('.piano-roll-visualizer').scrollLeft = 0;
       container.querySelector('a[data-midi-url].selected').classList.remove('selected');
       link.classList.add('selected');
     });
