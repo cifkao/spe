@@ -136,6 +136,29 @@ Both SPE-based models use the *gated* variant.
 <midi-player sound-font></midi-player>
 </div>
 
+<div class="tabbed-midi-player">
+<div class="tabs">
+  <a href="#" data-midi-url="/midi/grv2grv/ape/maj297.CHARLSTN_b.prompt.mid" class="selected">Prompt</a>
+  <a href="#" data-midi-url="/midi/grv2grv/ape/maj297.CHARLSTN_b.prompt_cont_2.mid">APE</a>
+  <a href="#" data-midi-url="/midi/grv2grv/sinespe/maj297.CHARLSTN_b.prompt_cont_1.mid">Sinusoidal SPE</a>
+  <a href="#" data-midi-url="/midi/grv2grv/convspe/maj297.CHARLSTN_b.prompt_cont_2.mid">Convolutional SPE</a>
+</div>
+<midi-visualizer></midi-visualizer>
+<midi-player sound-font></midi-player>
+</div>
+
+<div class="tabbed-midi-player">
+<div class="tabs">
+  <a href="#" data-midi-url="/midi/grv2grv/ape/maj572.TekJungl_b.prompt.mid" class="selected">Prompt</a>
+  <a href="#" data-midi-url="/midi/grv2grv/ape/maj572.TekJungl_b.prompt_cont_2.mid">APE</a>
+  <a href="#" data-midi-url="/midi/grv2grv/sinespe/maj572.TekJungl_b.prompt_cont_2.mid">Sinusoidal SPE</a>
+  <a href="#" data-midi-url="/midi/grv2grv/convspe/maj572.TekJungl_b.prompt_cont_2.mid">Convolutional SPE</a>
+</div>
+<midi-visualizer></midi-visualizer>
+<midi-player sound-font></midi-player>
+</div>
+
+
 <script>
 document.querySelectorAll('midi-visualizer').forEach(function (visualizer) {
   visualizer.config.noteHeight = 4;
