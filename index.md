@@ -21,8 +21,8 @@ We display outputs up to length 2560 to demonstrate extrapolation.
 *APE* refers to the Performer model with absolute positional encoding, the rest use our proposed *sinusoidal*
 and *convolutional SPE* (*gated* and *ungated* variants).
 We can clearly observe that the outputs from *APE* quickly become incoherent once the training length
-is exceeded; on the other hand, SPE-based models (especially ungated *convolutional SPE*) seem to
-extrapolate well.
+is exceeded (the time at which this happens depends on the tempo and style of each example).
+On the other hand, SPE-based models (especially *ungated convolutional SPE*) seem to extrapolate well.
 
 Use the following checkbox to control whether the extrapolation (beyond length 2048) is displayed or not.
 
