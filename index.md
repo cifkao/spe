@@ -10,6 +10,10 @@ description: 'Relative Positional Encoding for Transformers with Linear Complexi
 * TOC
 {:toc}
 
+## Source code
+
+The source code is attached in the supplementary ZIP file uploaded with the submission. See the README there for further details.
+
 ## Examples
 
 <section id="pop-piano" markdown="1">
