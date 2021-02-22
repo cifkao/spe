@@ -101,4 +101,36 @@ midi-player {
     border-top: none;
     border-radius: 0;
   }
+
+  @media screen and (max-width: 50rem) {
+    .tabs {
+      margin-bottom: 7px;
+      border: none;
+
+      a {
+        padding: 0.75rem 1.2rem;
+        box-sizing: content-box;
+        min-width: 1.1em;
+        text-align: center;
+        margin-right: 5px;
+        border: 1px solid $player-border-color;
+        border-radius: 5px 5px;
+      }
+
+      a:hover, a:active {
+        border-color: darken($player-border-color, 15%);
+      }
+
+      a.selected {
+        color: white;
+        background: $body-link-color;
+        border-color: $body-link-color;
+      }
+    }
+
+    midi-visualizer {
+      border-top: 1px solid $player-border-color;
+      border-radius: 5px;
+    }
+  }
 }
