@@ -17,8 +17,6 @@ defaults:
     values:
       midi: true
 
-baseurl: ""
-
 exclude:
   - node_modules
   - vendor
