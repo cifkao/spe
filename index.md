@@ -5,6 +5,9 @@ description: 'Relative Positional Encoding for Transformers with Linear Complexi
 
 {::options toc_levels="1..3" /}
 
+This is the companion website for the ICML 2021 paper *Relative Positional Encoding for Transformers with Linear Complexity*
+by Antoine Liutkus, Ondřej Cífka, Shih-Lun Wu, Umut Şimşekli, Yi-Hsuan Yang and Gaël Richard.
+
 ## Contents
 {: .no_toc}
 * TOC
@@ -12,7 +15,7 @@ description: 'Relative Positional Encoding for Transformers with Linear Complexi
 
 ## Source code
 
-The source code is attached in the supplementary ZIP file uploaded with the submission. See the README there for further details.
+The source code will be released [on GitHub](https://github.com/aliutkus/spe/).
 
 ## Examples
 
