@@ -164,6 +164,8 @@ Both SPE-based models use the *gated* variant.
 
 
 <script>
+BASE_URL = '{{ "/" | relative_url }}';
+
 document.querySelectorAll('midi-visualizer').forEach(function (visualizer) {
   visualizer.config.noteHeight = 4;
   visualizer.config.pixelsPerTimeStep = 30;
@@ -178,7 +180,7 @@ document.querySelectorAll('.tabbed-midi-player').forEach(function (container) {
 
   const visualizer = container.querySelector('midi-visualizer');
   const player = container.querySelector('midi-player');
-  const defaultUrl = container.querySelector('a[data-midi-url].selected').dataset.midiUrl;
+  const defaultUrl = BASE_URL + container.querySelector('a[data-midi-url].selected').dataset.midiUrl;
   player.addVisualizer(visualizer);
   player.src = defaultUrl;
   visualizer.src = defaultUrl;
@@ -195,8 +197,8 @@ document.querySelectorAll('.tabbed-midi-player').forEach(function (container) {
   container.querySelectorAll('a[data-midi-url]').forEach(function (link) {
     link.addEventListener('click', function (event) {
       event.preventDefault();
-      player.src = link.dataset.midiUrl;
-      visualizer.src = link.dataset.midiUrl;
+      player.src = BASE_URL + link.dataset.midiUrl;
+      visualizer.src = BASE_URL + link.dataset.midiUrl;
       visualizer.classList.add('loading');
       container.querySelector('a[data-midi-url].selected').classList.remove('selected');
       link.classList.add('selected');
