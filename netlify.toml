@@ -1,0 +1,4 @@
+[[redirects]]
+  from = "/"
+  to = "https://cifkao.github.io/spe/"
+  status = 302
