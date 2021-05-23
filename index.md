@@ -8,6 +8,8 @@ description: 'Relative Positional Encoding for Transformers with Linear Complexi
 This is the companion website for the ICML 2021 paper *Relative Positional Encoding for Transformers with Linear Complexity*
 by Antoine Liutkus, Ondřej Cífka, Shih-Lun Wu, Umut Şimşekli, Yi-Hsuan Yang and Gaël Richard.
 
+<div class="altmetric-embed" data-badge-popover="right" data-badge-type="1" data-arxiv-id="2105.08399"></div>
+
 ## Contents
 {: .no_toc}
 * TOC
