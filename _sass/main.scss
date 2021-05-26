@@ -4,6 +4,42 @@
   overflow-x: hidden;
 }
 
+header {
+  .btn {
+    color: white;
+    border-color: white;
+    background: transparent;
+    transition: color 0.3s, background-color 0.3s, border-color 0.3s;
+
+    &:hover {
+      color: black;
+      text-decoration: none;
+      background-color: white;
+      border-color: white;
+    }
+
+    font-size: 1.2rem;
+
+    i.fa {
+      margin-right: 0.2em;
+    }
+
+    @include large {
+      padding: 1rem 2rem;
+      font-size: 1.5rem;
+    }
+
+    @include medium {
+      padding: 0.7rem 1.5rem;
+      font-size: 1.25rem;
+    }
+  }
+}
+
+.badges > * {
+  display: inline-block;
+}
+
 
 $visualizer-bg: #fefefe;
 $player-bottom-bg: #e0e0e0;
@@ -25,13 +61,13 @@ midi-visualizer {
   .piano-roll-visualizer {
     width: inherit;
     overflow: auto;
-  
+
     svg {
       margin: 2px;
-  
+
       rect.note {
         opacity: calc(min(1, (var(--midi-velocity) + 30) / 128) * 0.75);
-  
+
         &.active {
           opacity: calc(min(1, (var(--midi-velocity) + 30) / 128) * 0.9);
           stroke: black;
@@ -39,7 +75,7 @@ midi-visualizer {
           stroke-opacity: 0.75;
         }
       }
-  
+
       @for $i from 0 to 200 {
         $color: nth($instrument-colors, ($i % length($instrument-colors)) + 1);
         rect.note[data-instrument="#{$i}"] {

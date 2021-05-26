@@ -1,7 +1,9 @@
 theme: jekyll-theme-cayman
 
+paper_url: "https://arxiv.org/abs/2105.08399"
 github:
-  is_project_page: false
+  is_project_page: true
+  repository_url: "https://github.com/aliutkus/spe"
 
 markdown: kramdown
 kramdown:
